@@ -35,7 +35,7 @@ android {
 
 dependencies {
     implementation(projects.theme)
-    implementation(projects.presentation)
+    implementation(projects.features)
     implementation(projects.domain)
     implementation(projects.models)
     implementation(projects.di)
@@ -49,10 +49,16 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material.icon)
-    
+    implementation(libs.accompanist.systemuicontroller)
+
     //hilt
     implementation(libs.android.hilt)
     kapt(libs.android.hilt.compiler)
+    //navigation
+    implementation(libs.androidx.compose.navigation)
+    implementation(libs.androidx.hilt.compose.navigation)
+    //paging
+    implementation(libs.androidx.paging.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

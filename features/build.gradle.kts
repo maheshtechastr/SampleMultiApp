@@ -30,6 +30,13 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material.icon)
 
+    //Paging 3
+    implementation(libs.androidx.paging.runtime)
+    implementation(libs.androidx.paging.compose)
+
+    //Coil image
+    implementation(libs.coil.compose)
+
     //hilt
     implementation(libs.android.hilt)
     kapt(libs.android.hilt.compiler)

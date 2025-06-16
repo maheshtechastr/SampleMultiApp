@@ -13,6 +13,7 @@ plugins {
     alias(libs.plugins.kotlin.compose) apply false
     alias(libs.plugins.android.dagger.hilt) apply false
     alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.android.kotlin.serialization) apply false
 }
 
 /**
@@ -30,7 +31,7 @@ fun BaseExtension.defaultConfig() {
     }
 
     composeOptions{
-        kotlinCompilerExtensionVersion = "2.0.21"
+        kotlinCompilerExtensionVersion = libs.versions.kotlin.get()
     }
 
 
@@ -78,7 +79,7 @@ fun PluginContainer.applyDefaultPlugin(project: Project) {
 }
 subprojects {
     project.plugins.applyDefaultPlugin(project)
-
+    //added to suppress material3 warning
     tasks.withType<KotlinCompile> {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_17)

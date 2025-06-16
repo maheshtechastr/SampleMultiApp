@@ -1,13 +1,11 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-//    alias(libs.plugins.kotlin.compose)
+    id("kotlin-parcelize")
 }
 android {
     namespace = "com.mpg.models.product"
-//    buildFeatures {
-//        compose = true
-//    }
 }
+
 
 

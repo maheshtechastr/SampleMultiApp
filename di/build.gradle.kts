@@ -1,16 +1,12 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-//    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.android.dagger.hilt)
     kotlin("kapt")
 }
 
 android {
     namespace = "com.mpg.di"
-//    buildFeatures {
-//        compose = true
-//    }
 }
 
 dependencies {

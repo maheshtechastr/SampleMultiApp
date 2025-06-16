@@ -16,17 +16,17 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-//        maven { url = uri("https://jitpack.io") }
     }
 }
 rootProject.name = "SampleMultiApp"
 
+//for read all module in other modules by projects.<module-name> dynamically
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(":app")
 include(":theme")
 include(":data")
 include(":domain")
-include(":presentation")
+include(":features")
 include(":models")
 include(":di")
