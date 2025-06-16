@@ -8,6 +8,7 @@ coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
+kotlinxCoroutinesTest = "1.9.0"
 kotlinxSerializationplugin = "1.9.0"
 lifecycleRuntime = "2.9.1"
 activityCompose = "1.10.1"
@@ -19,9 +20,12 @@ material = "1.12.0"
 composeNavigation = "2.9.0"
 hiltComposeNavigation = "1.2.0"
 kotlinCoroutines = "1.9.0"
+mockk = "1.13.8"
+mockito = "4.11.0"
 pagingCompose = "3.3.6"
 pagingRuntime = "3.3.6"
 squareupRetrofit = "2.9.0"
+pagingRuntimeKtx = "3.3.6"
 
 [libraries]
 accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanistSystemuicontroller" }
@@ -32,6 +36,7 @@ androidx-activity-compose = { group = "androidx.activity", name = "activity-comp
 
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "pagingCompose" }
 androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "pagingRuntime" }
+androidx-paging-testing = { module = "androidx.paging:paging-testing", version.ref = "pagingCompose" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -47,6 +52,7 @@ androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "u
 androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-compose-material-icon = { group = "androidx.compose.material", name = "material-icons-extended" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-compose-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "composeConstraintLayout" }
 
@@ -58,7 +64,10 @@ android-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-comp
 
 androidx-compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "composeNavigation" }
 androidx-hilt-compose-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltComposeNavigation" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
 squareup-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "squareupRetrofit" }
+androidx-paging-runtime-ktx = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "pagingRuntimeKtx" }
 
 
 

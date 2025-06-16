@@ -21,9 +21,8 @@ class ProductPagingSource @Inject constructor(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ProductData> {
         val page = params.key ?: 1
         return try {
-            val productResponse = productApi.getProducts(page = 10, skip = page * 10)
+            val productResponse = productApi.getProducts(page = page, skip = page * 10)
             totalProductCount += productResponse.products.size
-//            val articles = productResponse.products.distinctBy { it.title } //Remove duplicates
 
             LoadResult.Page(
                 data = productResponse.products,

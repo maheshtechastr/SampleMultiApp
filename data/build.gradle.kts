@@ -22,8 +22,13 @@ dependencies {
     //Retrofit
     implementation(libs.squareup.retrofit)
     implementation(libs.converter.gson)
+    implementation(libs.androidx.paging.runtime.ktx)
 
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.mockk)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.androidx.paging.testing) // to test paging
+
+    testImplementation(kotlin("test"))
 }

@@ -1,5 +1,6 @@
 package com.mpg.di
 
+import com.mpg.data.AppConstants.BASE_URL
 import com.mpg.data.network.ProductApi
 import dagger.Module
 import dagger.Provides
@@ -18,7 +19,7 @@ object AppModule {
     fun provideApiInstance(): ProductApi {
         return Retrofit
             .Builder()
-            .baseUrl("https://dummyjson.com")
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ProductApi::class.java)
