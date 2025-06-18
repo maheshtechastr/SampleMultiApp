@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.android.dagger.hilt)
-    kotlin("kapt")
+    alias(libs.plugins.google.devtools.ksp)
 }
 
 android {
@@ -23,6 +23,13 @@ dependencies {
     implementation(libs.squareup.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.androidx.paging.runtime.ktx)
+
+    //Room
+    implementation(libs.androidx.room.runtime)
+    //this project uses Kotlin source, so use Kotlin Symbol Processing (KSP)
+    ksp(libs.androidx.room.compiler)
+    //Kotlin Extensions and Coroutines support for Room
+    implementation(libs.androidx.room.ktx)
 
     testImplementation(libs.junit)
     testImplementation(libs.mockk)

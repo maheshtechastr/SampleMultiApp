@@ -20,6 +20,30 @@ import com.mpg.presentation.util.ResultState
 @Composable
 fun ProductsList(
     modifier: Modifier = Modifier,
+    products: List<Product>,
+    onClick: (Product) -> Unit
+) {
+    if (products.isEmpty()) {
+        EmptyScreen()
+    }
+    LazyColumn(
+        modifier = modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.spacedBy(MediumPadding1),
+        contentPadding = PaddingValues(all = ExtraSmallPadding2)
+    ) {
+        items(
+            count = products.size,
+        ) {
+            products[it]?.let { product ->
+                ProductCard(product = product, onClick = { onClick(product) })
+            }
+        }
+    }
+}
+
+@Composable
+fun ProductsList(
+    modifier: Modifier = Modifier,
     products: LazyPagingItems<Product>,
     onClick: (Product) -> Unit
 ) {
@@ -49,10 +73,12 @@ fun handlePagingResult(products: LazyPagingItems<Product>): Boolean {
             ShimmerEffect()
             false
         }
+
         is ResultState.Error -> {
             EmptyScreen(error = state.throwable)
             false
         }
+
         ResultState.Success -> true
     }
 }

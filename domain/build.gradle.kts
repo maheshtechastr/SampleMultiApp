@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.android.dagger.hilt)
-    kotlin("kapt")
+    alias(libs.plugins.google.devtools.ksp)
 }
 
 android {
@@ -14,7 +14,7 @@ dependencies {
 
     implementation(libs.androidx.paging.compose)
     implementation(libs.android.hilt)
-    kapt(libs.android.hilt.compiler)
+    ksp(libs.android.hilt.compiler)
 
     testImplementation(libs.junit)
     testImplementation(libs.mockk)

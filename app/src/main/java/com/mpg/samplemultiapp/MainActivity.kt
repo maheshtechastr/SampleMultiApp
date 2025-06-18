@@ -35,7 +35,6 @@ class MainActivity : ComponentActivity() {
                 Box(modifier = Modifier.background(MaterialTheme.colorScheme.background).fillMaxSize()) {
                     Navigator()
                 }
-
             }
         }
     }

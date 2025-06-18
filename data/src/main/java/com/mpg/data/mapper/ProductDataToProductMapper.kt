@@ -11,10 +11,10 @@ fun ProductData.toMap() = Product(
     title = title
 )
 
-//fun Product.toMap() = ProductData(
-//    description = description,
-//    id = id,
-//    price = price,
-//    thumbnail = thumbnail,
-//    title = title
-//)
+fun Product.toMap() = ProductData(
+    description = description,
+    id = id,
+    price = price,
+    thumbnail = thumbnail,
+    title = title
+)

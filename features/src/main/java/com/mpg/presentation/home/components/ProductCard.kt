@@ -94,7 +94,7 @@ fun ProductCardPreview() {
                 description = " Description Her train broke down",
                 title = "Her train broke down. Her phone died. And then she met her Saver in a",
                 price = 5.23,
-                thumbnail = "https://ichef.bbci.co.uk/live-experience/cps/624/cpsprodpb/11787/production/_124395517_bbcbreakingnewsgraphic.jpg"
+                thumbnail = ""
             )
         )
     }

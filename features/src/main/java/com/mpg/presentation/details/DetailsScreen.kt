@@ -68,6 +68,9 @@ fun DetailsScreen(
                         }
                     }
                 },
+                onBookMarkClick = {
+                    event(DetailsEvent.UpsertDeleteProduct(product))
+                },
                 onBackClick = navigateUp
             )
             BottomShadow(alpha = 0.15f, height = Dimens.TopBarShadow)

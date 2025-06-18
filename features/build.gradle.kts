@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.android.dagger.hilt)
-    kotlin("kapt")
+    alias(libs.plugins.google.devtools.ksp)
 }
 
 android {
@@ -39,7 +39,7 @@ dependencies {
 
     //hilt
     implementation(libs.android.hilt)
-    kapt(libs.android.hilt.compiler)
+    ksp(libs.android.hilt.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

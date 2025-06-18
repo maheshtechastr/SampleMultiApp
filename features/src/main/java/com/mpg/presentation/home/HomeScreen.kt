@@ -62,7 +62,6 @@ fun HomeScreen(
                 .height(30.dp)
                 .padding(horizontal = MediumPadding1)
         )
-
         Spacer(modifier = Modifier.height(MediumPadding1))
 
         Text(

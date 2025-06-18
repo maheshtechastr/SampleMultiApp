@@ -27,6 +27,7 @@ import com.mpg.theme.MultiAppTheme
 @Composable
 fun DetailsTopBar(
     onShareClick: () -> Unit,
+    onBookMarkClick: () -> Unit,
     onBackClick: () -> Unit,
 ) {
 
@@ -49,6 +50,12 @@ fun DetailsTopBar(
             }
         },
         actions = {
+            IconButton(onClick = onBookMarkClick) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_bookmark),
+                    contentDescription = null
+                )
+            }
             IconButton(onClick = onShareClick) {
                 Icon(
                     imageVector = Icons.Default.Share,
@@ -65,6 +72,7 @@ fun DetailsTopBar(
 fun DetailsTopBarPreview() {
     MultiAppTheme {
         DetailsTopBar(
+            onBookMarkClick = { /**/ },
             onShareClick = {},
         ) {
 
