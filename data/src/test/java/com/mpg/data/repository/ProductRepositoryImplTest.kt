@@ -5,6 +5,8 @@ import androidx.paging.PagingData
 import androidx.paging.map
 import androidx.paging.testing.asSnapshot
 import androidx.recyclerview.widget.DiffUtil
+import com.mpg.data.local.ProductDao
+import com.mpg.data.local.ProductDataSourceImpl
 import com.mpg.data.network.ProductApi
 import com.mpg.data.network.ProductPagingSource
 import com.mpg.data.utils.MainDispatcherRule
@@ -24,8 +26,9 @@ import kotlinx.coroutines.test.setMain
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
-import kotlin.test.Test
+import org.junit.Test
 import kotlin.test.assertEquals
+
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class ProductRepositoryImplTest {
@@ -38,6 +41,9 @@ class ProductRepositoryImplTest {
 
     private lateinit var api: ProductApi
 
+    private val productDao: ProductDao = mockk(relaxed = true)
+    private lateinit var dataSource: ProductDataSource
+
     @get:Rule
     val mainDispatcherRule = MainDispatcherRule()
 
@@ -45,8 +51,9 @@ class ProductRepositoryImplTest {
     fun setUp() {
         Dispatchers.setMain(testDispatcher)
         api = mockk()
+        dataSource = ProductDataSourceImpl(productDao)
         productPagingSource = ProductPagingSource(api)
-        repository = ProductRepositoryImpl(productPagingSource)
+        repository = ProductRepositoryImpl(productPagingSource, dataSource)
     }
 
     @After
@@ -94,11 +101,13 @@ class ProductRepositoryImplTest {
     fun test_success_for_all_attribute_in_product() = runTest {
         val products = mutableListOf<Product>()
         List(20) { index ->
-            products.add(Product(
-                id = index, title = "Mock$index",
-                description = "Desc$index",
-                price = 100.0 + index, thumbnail = "thumbnail$index"
-            ))
+            products.add(
+                Product(
+                    id = index, title = "Mock$index",
+                    description = "Desc$index",
+                    price = 100.0 + index, thumbnail = "thumbnail$index"
+                )
+            )
         }
         val pagingData = PagingData.from(products)
         // Act

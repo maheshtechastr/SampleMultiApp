@@ -28,6 +28,7 @@ import com.mpg.models.product.Product
 import com.mpg.presentation.Dimens.ExtraSmallPadding
 import com.mpg.presentation.Dimens.ProductCardSize
 import com.mpg.presentation.R
+import com.mpg.presentation.details.debugPlaceholder
 import com.mpg.theme.MultiAppTheme
 
 @Composable
@@ -48,6 +49,7 @@ fun ProductCard(
                 .clip(MaterialTheme.shapes.medium),
             model = ImageRequest.Builder(context).data(product.thumbnail).build(),
             contentDescription = null,
+            placeholder = debugPlaceholder(R.drawable.ic_home),
             contentScale = ContentScale.Crop
         )
         Column(

@@ -26,16 +26,25 @@ dependencies {
 
     //Room
     implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.junit.ktx)
     //this project uses Kotlin source, so use Kotlin Symbol Processing (KSP)
     ksp(libs.androidx.room.compiler)
     //Kotlin Extensions and Coroutines support for Room
     implementation(libs.androidx.room.ktx)
+    implementation(libs.kotlin.coroutines)
 
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.mockito.core)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.androidx.paging.testing) // to test paging
+    testImplementation(platform(libs.kotlin.bom))
+    testImplementation(libs.turbine)
+    testImplementation(libs.kotlin.mockito.kotlin)
+    testImplementation(libs.androidx.test.core) // or latest
+//    testImplementation(libs.robolectric) // or latest
+    testImplementation(libs.androidx.room.testing)
 
     testImplementation(kotlin("test"))
 }
+

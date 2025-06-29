@@ -1,5 +1,7 @@
 package com.mpg.di
 
+import com.mpg.data.local.ProductDataSourceImpl
+import com.mpg.data.repository.ProductDataSource
 import com.mpg.data.repository.ProductRepositoryImpl
 import com.mpg.domain.repository.ProductRepository
 import dagger.Binds
@@ -11,6 +13,10 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {
+
+    @Binds
+    @Singleton
+    abstract fun bindProductDataSource(productDataSource: ProductDataSourceImpl): ProductDataSource
 
     @Binds
     @Singleton

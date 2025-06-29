@@ -9,7 +9,7 @@ interface ProductRepository {
 
     suspend fun upsertProduct(productData: Product)
 
-    suspend fun deleteProduct(productData: Product)
+    suspend fun deleteProduct(productData: Product): Int?
 
     fun getProducts(): Flow<List<Product>>
 

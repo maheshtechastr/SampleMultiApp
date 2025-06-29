@@ -3,11 +3,13 @@ accompanistSystemuicontroller = "0.32.0"
 agp = "8.10.1"
 coilCompose = "2.5.0"
 converterGson = "2.9.0"
+core = "1.6.1"
 kotlin = "2.0.21"
 coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
+kotlinBom = "2.0.21"
 kotlinxCoroutinesTest = "1.9.0"
 kotlinxSerializationplugin = "1.9.0"
 lifecycleRuntime = "2.9.1"
@@ -20,17 +22,24 @@ material = "1.12.0"
 composeNavigation = "2.9.0"
 hiltComposeNavigation = "1.2.0"
 kotlinCoroutines = "1.9.0"
+mockitoKotlinVersion = "5.2.1"
 mockk = "1.13.8"
 mockito = "4.11.0"
 pagingCompose = "3.3.6"
 pagingRuntime = "3.3.6"
+robolectric = "4.11.1"
 roomRuntime = "2.7.1"
+roomTesting = "2.7.2"
 squareupRetrofit = "2.9.0"
 pagingRuntimeKtx = "3.3.6"
 devtoolsKsp = "2.0.21-1.0.27"
+turbine = "1.0.0"
+junitKtx = "1.2.1"
 
 [libraries]
 accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanistSystemuicontroller" }
+androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "roomTesting" }
+androidx-test-core = { module = "androidx.test:core", version.ref = "core" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntime" }
 androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycleRuntime" }
@@ -47,6 +56,9 @@ androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRunt
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 
+kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlinBom" }
+kotlin-mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoKotlinVersion" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 squareup-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "squareupRetrofit" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 
@@ -58,6 +70,7 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
 
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+
 mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
 
 androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
@@ -77,6 +90,8 @@ android-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-comp
 
 androidx-compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "composeNavigation" }
 androidx-hilt-compose-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltComposeNavigation" }
+turbine = { module = "app.cash.turbine:turbine", version.ref="turbine" }
+androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
 
 
 

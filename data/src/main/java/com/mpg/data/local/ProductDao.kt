@@ -14,7 +14,7 @@ interface ProductDao {
     suspend fun upsertProduct(productData: ProductData)
 
     @Delete
-    suspend fun deleteProduct(productData: ProductData)
+    suspend fun deleteProduct(productData: ProductData): Int
 
     @Query("SELECT * FROM ProductData")
     fun getProducts(): Flow<List<ProductData>>

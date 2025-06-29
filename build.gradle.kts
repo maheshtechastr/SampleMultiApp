@@ -46,6 +46,11 @@ fun BaseExtension.defaultConfig() {
             exclude("META-INF/gradle/incremental.annotation.processors")
         }
     }
+
+    testOptions {
+//        unitTests.isIncludeAndroidResources = true
+    }
+
 }
 
 fun PluginContainer.applyDefaultPlugin(project: Project) {

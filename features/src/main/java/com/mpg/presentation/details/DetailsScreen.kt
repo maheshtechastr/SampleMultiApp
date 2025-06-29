@@ -2,6 +2,7 @@ package com.mpg.presentation.details
 
 import android.content.Intent
 import android.widget.Toast
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,7 +18,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
@@ -85,6 +88,7 @@ fun DetailsScreen(
                 model = ImageRequest.Builder(context = context).data(product.thumbnail)
                     .build(),
                 contentDescription = null,
+                placeholder = debugPlaceholder(R.drawable.ic_home),
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(Dimens.ProductImageHeight)
@@ -138,3 +142,11 @@ fun DetailsScreenPreview() {
         }
     }
 }
+
+@Composable
+fun debugPlaceholder(@DrawableRes debugPreview: Int) =
+    if (LocalInspectionMode.current) {
+        painterResource(id = debugPreview)
+    } else {
+        null
+    }

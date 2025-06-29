@@ -4,7 +4,6 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.map
-import com.mpg.data.local.ProductDataSource
 import com.mpg.data.mapper.toMap
 import com.mpg.data.network.ProductPagingSource
 import com.mpg.domain.repository.ProductRepository
@@ -37,7 +36,7 @@ class ProductRepositoryImpl @Inject constructor(
         return productDataSource.upsertProduct(productData.toMap())
     }
 
-    override suspend fun deleteProduct(productData: Product) {
+    override suspend fun deleteProduct(productData: Product): Int? {
         return productDataSource.deleteProduct(productData.toMap())
     }
 
